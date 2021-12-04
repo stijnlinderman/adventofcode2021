@@ -7,13 +7,14 @@ import java.util.ArrayList;
 
 public class Input {
 
-	public ArrayList<String> getInput () {
+	public ArrayList<Integer> getInput () {
 
-		ArrayList<String> input = new ArrayList<String>();
+		ArrayList<Integer> input = new ArrayList<Integer>();
 
 		InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("input.txt");
 		BufferedReader bufferedInputReader = new BufferedReader(new InputStreamReader(inputStream));
-		bufferedInputReader.lines().forEach((String line) -> input.add(line));
+		bufferedInputReader.lines().forEach((String line) -> input.add(Integer.parseInt(line)));
 
-		return input;	}
+		return input;
+	}
 }
