@@ -11,8 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class Adventofcode2021ApplicationTests {
 
-	ArrayList<String> commandsAsStrings = new ArrayList<String>(Arrays.asList(new String[]{"forward 1","up 2","down 3"}));
-
 	@Test
 	void positionIsOneForwardAfterOneForward () {
 		Position position = new Position();

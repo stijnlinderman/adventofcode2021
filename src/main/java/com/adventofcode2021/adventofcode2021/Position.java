@@ -9,8 +9,8 @@ public class Position {
 
     public void processNavigationCommands (ArrayList<NavigationCommand> commands) {
         for (NavigationCommand command : commands) { 
-            if (command.getDirection().equals("forward")) forward(command.getSteps());
-            else if (command.getDirection().equals("up")) upward(command.getSteps());
+            if (command.getDirection().equals("forward")) this.forward(command.getSteps());
+            else if (command.getDirection().equals("up")) this.upward(command.getSteps());
             else if (command.getDirection().equals("down")) this.downward(command.getSteps());
         }
     }
