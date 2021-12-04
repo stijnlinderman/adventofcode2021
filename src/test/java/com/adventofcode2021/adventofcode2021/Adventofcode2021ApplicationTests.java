@@ -15,7 +15,7 @@ class Adventofcode2021ApplicationTests {
 
 	@Test
 	void threeIncreasesIsThreeIncreases() {
-		assertEquals(3, PuzzleSolver.getAmountOfTimesThatDepthIncreases(testInput));
+		assertEquals(3, PuzzleSolver.getAmountOfTimesThatDepthIncreasesInThreeMeasurementWindows(testInput));
 	}
 
 }
