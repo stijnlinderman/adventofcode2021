@@ -8,6 +8,9 @@ public class Adventofcode2021Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Adventofcode2021Application.class, args);
+		PuzzleSolver.printAnswer(PuzzleSolver.getAnswer(Input.getInput()));
 	}
 
 }
+
+
