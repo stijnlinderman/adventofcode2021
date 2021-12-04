@@ -6,25 +6,31 @@ public class Position {
 
     private int horizontalPosition = 0;
     private int depth = 0;
+    private int aim = 0;
 
     public void processNavigationCommands (ArrayList<NavigationCommand> commands) {
         for (NavigationCommand command : commands) { 
-            if (command.getDirection().equals("forward")) forward(command.getSteps());
-            else if (command.getDirection().equals("up")) upward(command.getSteps());
-            else if (command.getDirection().equals("down")) this.downward(command.getSteps());
+            if (command.getDirection().equals("forward")) this.move(command.getSteps());
+            else if (command.getDirection().equals("down")) this.aimDown(command.getSteps());
+            else if (command.getDirection().equals("up")) this.aimUp(command.getSteps());
         }
     }
 
-    public void forward (int steps) {
+    public void move (int steps) {
         this.horizontalPosition += steps;
+        this.downward (steps * this.getAim());
+    }
+
+    public void aimDown (int steps) {
+        this.aim += steps;
+    }
+
+    public void aimUp (int steps) {
+        this.aim -= steps;        
     }
 
     public void downward (int steps) {
         this.depth += steps;
-    }
-
-    public void upward (int steps) {
-        this.depth -= steps;
     }
 
     public int getHorizontalPosition () {
@@ -33,6 +39,10 @@ public class Position {
 
     public int getDepth () {
         return this.depth;
+    }
+
+    public int getAim () {
+        return this.aim;
     }
 
     public void printPositionReport () {

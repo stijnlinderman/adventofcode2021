@@ -11,8 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class Adventofcode2021ApplicationTests {
 
-	ArrayList<String> commandsAsStrings = new ArrayList<String>(Arrays.asList(new String[]{"forward 1","up 2","down 3"}));
-
 	@Test
 	void positionIsOneForwardAfterOneForward () {
 		Position position = new Position();
@@ -23,29 +21,11 @@ class Adventofcode2021ApplicationTests {
 	}
 
 	@Test
-	void positionIsOneDepthAfterOneDepth () {
+	void positionAfterTwoDownOneForward () {
 		Position position = new Position();
-		ArrayList<NavigationCommand> commands = NavigationCommand.getNavigationCommandsFromStrings(new ArrayList<String>(Arrays.asList(new String[]{"up 1"})));
+		ArrayList<NavigationCommand> commands = NavigationCommand.getNavigationCommandsFromStrings(new ArrayList<String>(Arrays.asList(new String[]{"down 2", "forward 1"})));
 		position.processNavigationCommands(commands);
-		assertEquals(0, position.getHorizontalPosition());
-		assertEquals(-1, position.getDepth());
-	}
-
-	@Test
-	void positionIsOneDepthAfterTwoDownTwoUp () {
-		Position position = new Position();
-		ArrayList<NavigationCommand> commands = NavigationCommand.getNavigationCommandsFromStrings(new ArrayList<String>(Arrays.asList(new String[]{"down 1"})));
-		position.processNavigationCommands(commands);
-		assertEquals(0, position.getHorizontalPosition());
-		assertEquals(1, position.getDepth());
-	}
-
-	@Test
-	void positionCorrectAfterThreeCommands() {
-		Position position = new Position();
-		ArrayList<NavigationCommand> commands = NavigationCommand.getNavigationCommandsFromStrings(new ArrayList<String>(Arrays.asList(new String[]{"down 3","forward 2", "up 1"})));
-		position.processNavigationCommands(commands);
-		assertEquals(2, position.getHorizontalPosition());
+		assertEquals(1, position.getHorizontalPosition());
 		assertEquals(2, position.getDepth());
 	}
 
