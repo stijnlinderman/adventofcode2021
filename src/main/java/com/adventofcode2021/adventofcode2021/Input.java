@@ -1,31 +1,19 @@
 package com.adventofcode2021.adventofcode2021;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 
 public class Input {
 
-	public static ArrayList<String> getInput () {
+	public ArrayList<String> getInput () {
+
 		ArrayList<String> input = new ArrayList<String>();
 
-		try {
-			FileReader fileReader = new FileReader ("input.txt");
-			Scanner scanner = new Scanner(fileReader);
+		InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("input.txt");
+		BufferedReader bufferedInputReader = new BufferedReader(new InputStreamReader(inputStream));
+		bufferedInputReader.lines().forEach((String line) -> input.add(line));
 
-			while (scanner.hasNextLine()) {
-				input.add(scanner.nextLine());
-			}
-			scanner.close();
-
-		} catch (FileNotFoundException exception) {
-			System.out.println ("Oops, file not found.");
-			exception.printStackTrace();
-		}
-
-		return input;
-	}
+		return input;	}
 }
-
-
