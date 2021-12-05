@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Input {
 
-	public ArrayList<String> getInput () {
+	public static ArrayList<String> getInput () {
 
 		ArrayList<String> input = new ArrayList<String>();
 
@@ -15,5 +15,6 @@ public class Input {
 		BufferedReader bufferedInputReader = new BufferedReader(new InputStreamReader(inputStream));
 		bufferedInputReader.lines().forEach((String line) -> input.add(line));
 
-		return input;	}
+		return input;
+	}
 }

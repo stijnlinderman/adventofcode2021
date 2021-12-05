@@ -9,7 +9,7 @@ public class PuzzleSolver {
     }
 
     public static void printAnswer (String stringToPrint) {
-        System.out.println("\n#### THE ANSWER ####\n\n" + stringToPrint + "\n\n#### END OF ANSWER ####\n");
+        //System.out.println("\n#### THE ANSWER ####\n\n" + stringToPrint + "\n\n#### END OF ANSWER ####\n");
     }
     
 }
