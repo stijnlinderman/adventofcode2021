@@ -13,7 +13,8 @@ class Adventofcode2021ApplicationTests {
 
 	@Test
 	void threeIncreasesIsThreeIncreases() {
-		assertEquals(3, PuzzleSolver.getAmountOfTimesThatDepthIncreases(new ArrayList<Integer>(Arrays.asList(new Integer[]{1,2,2,1,3,4,4}))));
+		ArrayList<Integer> testInput = new ArrayList<Integer>(Arrays.asList(new Integer[]{1,2,2,1,3,4,4}));
+		assertEquals(3, PuzzleSolver.getAmountOfTimesThatDepthIncreases(testInput));
 	}
 
 }
