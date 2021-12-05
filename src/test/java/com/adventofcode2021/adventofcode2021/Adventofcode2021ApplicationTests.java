@@ -11,11 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class Adventofcode2021ApplicationTests {
 
-	ArrayList<Integer> testInput = new ArrayList<Integer>(Arrays.asList(new Integer[]{1,2,2,1,3,4,4}));
-
 	@Test
 	void threeIncreasesIsThreeIncreases() {
-		assertEquals(3, PuzzleSolver.getAmountOfTimesThatDepthIncreases(testInput));
+		assertEquals(3, PuzzleSolver.getAmountOfTimesThatDepthIncreases(new ArrayList<Integer>(Arrays.asList(new Integer[]{1,2,2,1,3,4,4}))));
 	}
 
 }
