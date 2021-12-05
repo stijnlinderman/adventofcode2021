@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Input {
 
-	public ArrayList<String> getInput () {
+	public static ArrayList<String> getInput () {
 
 		ArrayList<String> input = new ArrayList<String>();
 
