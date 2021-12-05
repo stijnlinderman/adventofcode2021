@@ -12,7 +12,7 @@ public class Adventofcode2021Application {
 		SpringApplication.run(Adventofcode2021Application.class, args);
 		Position position = new Position();
 		
-		ArrayList<NavigationCommand> commands = NavigationCommand.getNavigationCommandsFromStrings(new Input().getInput());
+		ArrayList<NavigationCommand> commands = NavigationCommand.getNavigationCommandsFromStrings(Input.getInput());
 		position.processNavigationCommands(commands);
 		position.printPositionReport();
 	}
